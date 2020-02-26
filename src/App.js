@@ -19,14 +19,37 @@ class App extends React.Component {
 
   handleChange = (e) => {
     this.setState({[e.target.id]: e.target.value});
+    console.log(JSON.stringify(this.state))
+  }
+
+  saveLocal = () => {
+    localStorage.setItem('ficha', JSON.stringify(this.state));
+  }
+
+  loadLocal = () => {
+    let ficha = localStorage.ficha;
+    if(ficha !== undefined) {
+      this.setState(JSON.parse(ficha));
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <Header state={this.state} handleChange={this.handleChange} />
-        </header>
+        <div className="Ficha">
+          <header className="App-header">
+            <Header state={this.state} handleChange={this.handleChange} />
+          </header>
+        </div>
+
+        <div className="actions">
+          <button onClick={this.saveLocal}>
+            Salvar
+          </button>
+          <button onClick={this.loadLocal}>
+            Carregar
+          </button>
+        </div>
       </div>
     )
   }

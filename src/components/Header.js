@@ -15,7 +15,7 @@ class Header extends React.Component {
           <div className="raca-origem">
             <div className="input-wrapper">
               <input id="raca" value={this.props.state.raca}
-                             onChange={(e) => this.props.handleChange(e)} />
+                               onChange={(e) => this.props.handleChange(e)} />
               <label htmlFor="raca">Raça</label>
             </div>
             <div className="input-wrapper">
