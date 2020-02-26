@@ -3,27 +3,38 @@
   padding: 5px;
 }
 
-.Atributos div {
+.Atributos > div {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.Atributos .box {
+.Atributos > div .box {
+  flex: 1;
   border: 1px solid #000;
-  margin: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+  margin: 0 5px;
 }
 
-.Atributos .box label {
+.Atributos > div .box label {
   font-size: 12px;
   display: block;
+  text-transform: uppercase;
 }
 
-.Atributos .box span {
+.Atributos > div .box span {
   display: block;
+  font-size: 30px;
+  margin-top: 5px;
 }
 
-.Atributos .box input {
+.Atributos > div > input {
+  flex: 1;
   border: 1px solid #000;
   width: 40px;
   font-size: 16px;
-  margin-bottom: -10px;
+  margin: -15px auto 0;
+  text-align: center;
+  border-radius: 50%;
 }

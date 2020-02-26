@@ -16,17 +16,28 @@ class App extends React.Component {
       classe: "Classe",
       nivel: "1",
       for: 10,
+      for_mod: 0,
       des: 10,
+      des_mod: 0,
       con: 10,
+      con_mod: 0,
       int: 10,
+      int_mod: 0,
       sab: 10,
+      sab_mod: 0,
       car: 10,
+      car_mod: 0,
     }
   }
 
   handleChange = (e) => {
-    this.setState({[e.target.id]: e.target.value});
+    let newState = {[e.target.id]: e.target.value} 
+    this.setState(newState);
     console.log(JSON.stringify(this.state))
+  }
+
+  updateState = (newState) => {
+    this.setState(newState);
   }
 
   saveLocal = () => {
@@ -47,7 +58,9 @@ class App extends React.Component {
           <Header state={this.state} handleChange={this.handleChange} />
           <div className="core">
             <div className="esq">
-              <Atributos state={this.state} handleChange={this.handleChange} />
+              <Atributos state={this.state}
+                         handleChange={this.handleChange}
+                         updateState={this.updateState} />
             </div>
             <div className="dir">
 

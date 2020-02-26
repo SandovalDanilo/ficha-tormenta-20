@@ -2,29 +2,47 @@ import React from 'react';
 import './stylesheets/Atributos.css';
 
 class Atributos extends React.Component {
+  calculaMod = (atr) => {
+    return Math.floor((atr - 10) / 2)
+  }
+
+  modComSinal = (mod) => {
+    if (mod > 0) {
+      return ("+"+mod);
+    } else {
+      return mod;
+    }
+  }
+
+  mudancaAtributos = (e) => {
+    let newState = {
+      [e.target.id+"_mod"]: this.calculaMod(e.target.value)
+    }
+
+    this.props.updateState(newState);
+  }
+
+  caixaAtributo = (atr) => {
+    return (
+      <div key={atr}>
+        <div className="box">
+          <label htmlFor={atr}>{atr}</label>
+          <span>{this.modComSinal(this.props.state[atr+"_mod"])}</span>
+        </div>
+        <input id={atr}
+               value={this.props.state[atr]}
+               onBlur={(e) => this.mudancaAtributos(e)}
+               onChange={(e) => this.props.handleChange(e)} />
+      </div>
+    );
+  }
+
   render() {
+    const atributos = ["for", "des", "con", "int", "sab", "car"];
+
     return (
       <div className="Atributos">
-        <div className="box">
-          <label htmlFor="for">FOR</label>
-          <span>{this.props.state.for}</span>
-          <input></input>
-        </div>
-        <div className="box">
-          DES
-        </div>
-        <div className="box">
-          CON
-        </div>
-        <div className="box">
-          INT
-        </div>
-        <div className="box">
-          SAB
-        </div>
-        <div className="box">
-          CAR
-        </div>
+        {atributos.map(this.caixaAtributo)}
       </div>
     )
   }
