@@ -1,0 +1,6 @@
+.App {
+  width: 80%;
+  min-width: 800px;
+  margin: 30px auto 0;
+  box-shadow: 0px 0px 10px 0px #000;
+}

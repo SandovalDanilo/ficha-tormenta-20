@@ -1,0 +1,37 @@
+.Header {
+  display: flex;
+}
+
+.Header div {
+  flex: 1;
+}
+
+.Header .input-wrapper {
+  padding: 5px;
+}
+
+.Header .input-wrapper input {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 16px;
+}
+
+.Header .input-wrapper label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.Header .raca-origem {
+  display: flex;
+}
+
+.Header .classe-nivel {
+  display: flex;
+}
+
+.Header .classe-nivel > .classe {
+  flex: 3;
+}
