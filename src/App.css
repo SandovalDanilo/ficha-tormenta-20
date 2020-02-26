@@ -5,6 +5,18 @@
   box-shadow: 0px 0px 10px 0px #000;
 }
 
+.Ficha .core {
+  display: flex;
+}
+
+.Ficha .core .esq {
+  flex: 2;
+}
+
+.Ficha .core .dir {
+  flex: 1;
+}
+
 .actions {
   width: 80%;
   min-width: 800px;

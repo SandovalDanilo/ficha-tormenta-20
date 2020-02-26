@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Header from './components/Header';
+import Atributos from './components/Atributos';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +15,12 @@ class App extends React.Component {
       jogador: "Jogador",
       classe: "Classe",
       nivel: "1",
+      for: 10,
+      des: 10,
+      con: 10,
+      int: 10,
+      sab: 10,
+      car: 10,
     }
   }
 
@@ -37,9 +44,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="Ficha">
-          <header className="App-header">
-            <Header state={this.state} handleChange={this.handleChange} />
-          </header>
+          <Header state={this.state} handleChange={this.handleChange} />
+          <div className="core">
+            <div className="esq">
+              <Atributos state={this.state} handleChange={this.handleChange} />
+            </div>
+            <div className="dir">
+
+            </div>
+          </div>
         </div>
 
         <div className="actions">
