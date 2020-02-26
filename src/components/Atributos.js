@@ -7,7 +7,7 @@ class Atributos extends React.Component {
   }
 
   modComSinal = (mod) => {
-    if (mod > 0) {
+    if (mod >= 0) {
       return ("+"+mod);
     } else {
       return mod;

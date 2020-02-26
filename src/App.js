@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Atributos from './components/Atributos';
+import VidaMana from './components/VidaMana';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends React.Component {
       origem: "Origem",
       jogador: "Jogador",
       classe: "Classe",
-      nivel: "1",
+      nivel: 1,
       for: 10,
       for_mod: 0,
       des: 10,
@@ -27,6 +28,10 @@ class App extends React.Component {
       sab_mod: 0,
       car: 10,
       car_mod: 0,
+      vida_max: 10,
+      vida_atual: 7,
+      mana_max: 5,
+      mana_atual: 4,
     }
   }
 
@@ -61,9 +66,9 @@ class App extends React.Component {
               <Atributos state={this.state}
                          handleChange={this.handleChange}
                          updateState={this.updateState} />
+              <VidaMana state={this.state} />
             </div>
             <div className="dir">
-
             </div>
           </div>
         </div>

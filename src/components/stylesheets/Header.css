@@ -7,7 +7,7 @@
 }
 
 .Header .input-wrapper {
-  padding: 5px;
+  margin: 5px;
 }
 
 .Header .input-wrapper input {
@@ -16,6 +16,7 @@
   border: none;
   border-bottom: 2px solid #000;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .Header .input-wrapper label {

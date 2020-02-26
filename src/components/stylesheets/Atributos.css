@@ -1,20 +1,20 @@
 .Atributos {
   display: flex;
-  padding: 5px;
 }
 
 .Atributos > div {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-bottom: 5px;
 }
 
 .Atributos > div .box {
   flex: 1;
   border: 1px solid #000;
   text-align: center;
-  padding-bottom: 20px;
-  margin: 0 5px;
+  margin: 5px 5px 0;
+  padding-bottom: 15px;
 }
 
 .Atributos > div .box label {
@@ -25,7 +25,7 @@
 
 .Atributos > div .box span {
   display: block;
-  font-size: 30px;
+  font-size: 32px;
   margin-top: 5px;
 }
 
