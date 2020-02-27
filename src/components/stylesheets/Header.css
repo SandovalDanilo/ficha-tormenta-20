@@ -15,13 +15,13 @@
   width: 100%;
   border: none;
   border-bottom: 2px solid #000;
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
 }
 
 .Header .input-wrapper label {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 

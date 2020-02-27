@@ -36,7 +36,7 @@ class Atributos extends React.Component {
     return (
       <div key={atr}>
         <div className="box">
-          <label htmlFor={atr}>{atr}</label>
+          <label htmlFor={atr} className="bold-label">{atr}</label>
           <span>{this.modComSinal(this.props.atributos[atr+"_mod"])}</span>
         </div>
         <input id={atr}

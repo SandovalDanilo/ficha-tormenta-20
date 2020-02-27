@@ -108,8 +108,8 @@ class Pericias extends React.Component {
         <table>
           <thead>
             <tr className="linha header">
-              <th className="nome" colSpan="2">Perícias</th>
-              <th className="total">Total</th>
+              <th className="nome bold-label" colSpan="2">Perícias</th>
+              <th className="total bold-label">Total</th>
               <th className="igual"></th>
               <th className="metade-nivel">1/2 Nível</th>
               <th className="mod-atributo">Mod. Atributo</th>

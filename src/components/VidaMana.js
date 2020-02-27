@@ -6,7 +6,7 @@ class VidaMana extends React.Component {
     return (
       <div className="VidaMana">
         <div className="vida">
-          <label>Pontos de Vida</label>
+          <label className="bold-label">Pontos de Vida</label>
           <div className="pontos">
             <div className="maximos">
               <span className="num">{this.props.state.vida_max}</span>
@@ -19,7 +19,7 @@ class VidaMana extends React.Component {
           </div>
         </div>
         <div className="mana">
-          <label>Pontos de Mana</label>
+          <label className="bold-label">Pontos de Mana</label>
           <div className="pontos">
             <div className="maximos">
               <span className="num">{this.props.state.mana_max}</span>

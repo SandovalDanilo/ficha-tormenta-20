@@ -6,6 +6,12 @@
   padding: 5px;
 }
 
+.Ficha,
+.Ficha input,
+.Ficha select {
+  font-family: 'Source Sans Pro';
+}
+
 .Ficha .core {
   display: flex;
 }
@@ -18,6 +24,13 @@
   flex: 1;
 }
 
+.Ficha .bold-label {
+  font-weight: bold !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.5px;
+}
+
 .actions {
   width: 80%;
   min-width: 800px;
@@ -28,4 +41,6 @@
 .actions button {
   font-size: 18px;
   margin-right: 20px;
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
 }
