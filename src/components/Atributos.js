@@ -14,12 +14,22 @@ class Atributos extends React.Component {
     }
   }
 
-  mudancaAtributos = (e) => {
-    let newState = {
-      [e.target.id+"_mod"]: this.calculaMod(e.target.value)
-    }
+  atualizaAtributos = (e) => {
+    let atributos = {...this.props.atributos};
+    atributos[e.target.id] = parseInt(e.target.value);
 
-    this.props.updateState(newState);
+    this.props.updateState({
+      atributos: atributos
+    });
+  }
+
+  atualizaModificadores = (e) => {
+    let atributos = {...this.props.atributos};
+    atributos[e.target.id+"_mod"] = this.calculaMod(e.target.value);
+
+    this.props.updateState({
+      atributos: atributos
+    });
   }
 
   caixaAtributo = (atr) => {
@@ -27,12 +37,12 @@ class Atributos extends React.Component {
       <div key={atr}>
         <div className="box">
           <label htmlFor={atr}>{atr}</label>
-          <span>{this.modComSinal(this.props.state[atr+"_mod"])}</span>
+          <span>{this.modComSinal(this.props.atributos[atr+"_mod"])}</span>
         </div>
         <input id={atr}
-               value={this.props.state[atr]}
-               onBlur={(e) => this.mudancaAtributos(e)}
-               onChange={(e) => this.props.handleChange(e)} />
+               value={this.props.atributos[atr]}
+               onBlur={(e) => this.atualizaModificadores(e)}
+               onChange={(e) => this.atualizaAtributos(e)} />
       </div>
     );
   }

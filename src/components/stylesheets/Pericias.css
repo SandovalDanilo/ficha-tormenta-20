@@ -1,0 +1,76 @@
+.Pericias {
+}
+
+.Pericias table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin: 5px;
+}
+
+.Pericias .linha {
+  text-align: center;
+}
+
+.Pericias .linha .nome {
+  text-align-last: left;
+}
+
+.Pericias .linha th {
+  vertical-align: bottom;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.Pericias .linha th.nome {
+  padding-left: 5px;
+}
+
+.Pericias .linha th.nome,
+.Pericias .linha th.total {
+  font-weight: bold;
+}
+
+.Pericias .linha th.metade-nivel,
+.Pericias .linha th.mod-atributo,
+.Pericias .linha th.treino,
+.Pericias .linha th.outros {
+  font-size: 9px;
+  width: 10%;
+}
+
+.Pericias .linha:hover td {
+  background-color: #eee;
+}
+
+.Pericias .linha td.nome {
+  font-size: 13px;
+}
+
+.Pericias .linha td.nome .atributo {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.Pericias .linha td.total {
+  border: 1px solid #000;
+}
+
+.Pericias .linha td {
+  position: relative;
+}
+
+.Pericias .linha td .simbolo {
+  position: absolute;
+  left: -5px;
+}
+
+.Pericias .linha td input.numero {
+  border: 0;
+  border-bottom: 1px solid #000;
+  background: none;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  width: 80%;
+}

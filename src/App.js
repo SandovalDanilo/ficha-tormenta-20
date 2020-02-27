@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Atributos from './components/Atributos';
 import VidaMana from './components/VidaMana';
+import Pericias, { ListaPericias } from './components/Pericias'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,43 +17,47 @@ class App extends React.Component {
       jogador: "Jogador",
       classe: "Classe",
       nivel: 1,
-      for: 10,
-      for_mod: 0,
-      des: 10,
-      des_mod: 0,
-      con: 10,
-      con_mod: 0,
-      int: 10,
-      int_mod: 0,
-      sab: 10,
-      sab_mod: 0,
-      car: 10,
-      car_mod: 0,
+      atributos: {
+        for: 10,
+        for_mod: 0,
+        des: 10,
+        des_mod: 0,
+        con: 10,
+        con_mod: 0,
+        int: 10,
+        int_mod: 0,
+        sab: 10,
+        sab_mod: 0,
+        car: 10,
+        car_mod: 0,
+      },
       vida_max: 10,
       vida_atual: 7,
       mana_max: 5,
       mana_atual: 4,
+      pericias: ListaPericias,
     }
   }
 
   handleChange = (e) => {
     let newState = {[e.target.id]: e.target.value} 
-    this.setState(newState);
-    console.log(JSON.stringify(this.state))
+    this.setState(newState)
   }
 
   updateState = (newState) => {
-    this.setState(newState);
+    this.setState(newState)
   }
 
   saveLocal = () => {
-    localStorage.setItem('ficha', JSON.stringify(this.state));
+    localStorage.setItem('ficha', JSON.stringify(this.state))
+
+    console.log(JSON.parse(localStorage.ficha))
   }
 
   loadLocal = () => {
     let ficha = localStorage.ficha;
     if(ficha !== undefined) {
-      this.setState(JSON.parse(ficha));
+      this.setState(JSON.parse(ficha))
     }
   }
 
@@ -63,12 +68,15 @@ class App extends React.Component {
           <Header state={this.state} handleChange={this.handleChange} />
           <div className="core">
             <div className="esq">
-              <Atributos state={this.state}
-                         handleChange={this.handleChange}
+              <Atributos atributos={this.state.atributos}
                          updateState={this.updateState} />
               <VidaMana state={this.state} />
             </div>
             <div className="dir">
+              <Pericias pericias={this.state.pericias}
+                        nivel={this.state.nivel}
+                        atributos={this.state.atributos}
+                        updateState={this.updateState} />
             </div>
           </div>
         </div>

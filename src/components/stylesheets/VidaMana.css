@@ -1,0 +1,41 @@
+.VidaMana {
+  display: flex;
+  text-align: center;
+}
+
+.VidaMana > div {
+  flex: 1;
+  border: 1px solid #000;
+  margin: 5px;
+  padding-bottom: 10px;
+}
+
+.VidaMana > div > label {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.VidaMana .pontos {
+  display: flex;
+}
+
+.VidaMana .pontos .maximos {
+  flex: 1;
+  border-right: 1px solid #999;
+}
+
+.VidaMana .pontos .atuais {
+  flex: 3;
+}
+
+.VidaMana .pontos span {
+  display: block;
+}
+
+.VidaMana .pontos .num {
+  font-size: 32px;
+}
+
+.VidaMana .pontos .label {
+  font-size: 11px;
+}
