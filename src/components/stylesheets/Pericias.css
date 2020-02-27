@@ -33,8 +33,18 @@
   width: 10%;
 }
 
+.Pericias .linha td {
+  position: relative;
+}
+
 .Pericias .linha:hover td {
   background-color: #eee;
+}
+
+.Pericias .linha td.treino-check input {
+  height: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .Pericias .linha td.nome {
@@ -49,10 +59,6 @@
 
 .Pericias .linha td.total {
   border: 1px solid #000;
-}
-
-.Pericias .linha td {
-  position: relative;
 }
 
 .Pericias .linha td .simbolo {

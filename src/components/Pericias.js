@@ -46,7 +46,7 @@ class Pericias extends React.Component {
   renderPericia = (key, pericia, nivel, atributos) => {
     return (
       <tr className="linha" key={key}>
-        <td>
+        <td className="treino-check">
           <input type="checkbox"
                  id={key}
                  checked={pericia.treino}
