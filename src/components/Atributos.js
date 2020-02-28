@@ -1,4 +1,5 @@
 import React from 'react';
+import { modComSinal } from './Utils'
 import './stylesheets/Atributos.css';
 
 class Atributos extends React.Component {
@@ -6,17 +7,9 @@ class Atributos extends React.Component {
     return Math.floor((atr - 10) / 2)
   }
 
-  modComSinal = (mod) => {
-    if (mod >= 0) {
-      return ("+"+mod);
-    } else {
-      return mod;
-    }
-  }
-
   atualizaAtributos = (e) => {
     let atributos = {...this.props.atributos};
-    atributos[e.target.id] = parseInt(e.target.value);
+    atributos[e.target.id] = parseInt(e.target.value || 0);
 
     this.props.updateState({
       atributos: atributos
@@ -37,7 +30,7 @@ class Atributos extends React.Component {
       <div key={atr}>
         <div className="box">
           <label htmlFor={atr} className="bold-label">{atr}</label>
-          <span>{this.modComSinal(this.props.atributos[atr+"_mod"])}</span>
+          <span>{modComSinal(this.props.atributos[atr+"_mod"])}</span>
         </div>
         <input id={atr}
                value={this.props.atributos[atr]}

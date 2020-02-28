@@ -1,0 +1,52 @@
+.Ataques {
+  margin: 5px;
+  padding: 5px;
+  height: 200px;
+  border: 1px solid #000;
+}
+
+.Ataques table {
+  width: 100%;
+}
+
+.Ataques table th {
+  font-size: 11px;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.Ataques table .nome {
+  /* width: 30%; */
+  text-align: left;
+}
+
+.Ataques table .bonus { width: 10%; }
+.Ataques table .dano { width: 10%; }
+.Ataques table .critico { width: 10%; }
+.Ataques table .tipo { width: 18%; }
+.Ataques table .alcance { width: 10%; }
+.Ataques table .acao { width: 2%; }
+
+.Ataques table tbody {
+  vertical-align: top;
+}
+
+.Ataques table td {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.Ataques table td input {
+  border: 0;
+  border-bottom: 1px solid #000;
+  background: none;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  padding-bottom: 3px;
+  width: 90%;
+}
+
+.Ataques table .nome input {
+  text-align: left;
+}

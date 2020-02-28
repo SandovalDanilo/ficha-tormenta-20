@@ -4,7 +4,8 @@ import './App.css';
 import Header from './components/Header';
 import Atributos from './components/Atributos';
 import VidaMana from './components/VidaMana';
-import Pericias, { ListaPericias } from './components/Pericias'
+import Pericias, { ListaPericias } from './components/Pericias';
+import Ataques from './components/Ataques';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,6 +37,28 @@ class App extends React.Component {
       mana_max: 5,
       mana_atual: 4,
       pericias: ListaPericias,
+      ataques: [
+        {
+          value: "adaga",
+          label: "Adaga",
+          bonus: "+3",
+          dano: "1d4",
+          critico: "19",
+          alcance: "Curto",
+          tipo: "Perfuração",
+          pericias: ["luta", "pontaria"]
+        },
+        {
+          value: "arco_longo",
+          label: "Arco longo",
+          bonus: "+3",
+          dano: "1d6",
+          critico: "x3",
+          alcance: "Médio",
+          tipo: "Perfuração",
+          pericias: ["pontaria"]
+        },
+      ],
     }
   }
 
@@ -71,6 +94,11 @@ class App extends React.Component {
               <Atributos atributos={this.state.atributos}
                          updateState={this.updateState} />
               <VidaMana state={this.state} />
+
+              <Ataques ataques={this.state.ataques}
+                       atributos={this.state.atributos}
+                       pericias={this.state.pericias}
+                       updateState={this.updateState} />
             </div>
             <div className="dir">
               <Pericias pericias={this.state.pericias}
