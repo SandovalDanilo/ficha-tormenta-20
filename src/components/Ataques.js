@@ -1,10 +1,57 @@
 import React from 'react';
-import { modComSinal } from './Utils'
+import { modComSinal } from './Utils';
+import { calculaTotal } from './Pericias';
 import './stylesheets/Ataques.css';
 
 import AtaqueSelect from './AtaqueSelect';
 
 class Ataques extends React.Component {
+  selectAtaque = (selected, i) => {
+    let ataques = {...this.props.ataques};
+    let bonus = [];
+    let newAtaque = {};
+
+    if(selected.__isNew__) {
+      newAtaque = {
+        ...ataques[i],
+        value: selected["value"],
+        label: selected["label"],
+        bonus: "",
+        dano: "",
+        critico: "",
+        tipo: "",
+        alcance: "",
+      } 
+    } else {
+      newAtaque = {
+        ...ataques[i],
+        value: selected["value"],
+        label: selected["label"],
+        dano: selected["dano"],
+        critico: selected["critico"],
+        tipo: selected["tipo"],
+        alcance: selected["alcance"],
+      }    
+
+      if (selected["pericias"].indexOf("luta") > -1) {
+        bonus.push(calculaTotal(this.props.pericias.luta, this.props.nivel, this.props.atributos));
+        newAtaque["dano"] += modComSinal(this.props.atributos.for_mod);
+      }
+  
+      if (selected["pericias"].indexOf("pontaria") > -1) {
+        bonus.push(calculaTotal(this.props.pericias.pontaria, this.props.nivel, this.props.atributos));
+      }
+  
+      newAtaque["bonus"] = bonus.map(modComSinal).join("/");
+    }
+
+    ataques[i] = newAtaque;
+    
+    this.props.updateState({
+      ataques: ataques
+    });
+  }
+  
   updateAtaque = (e) => {
     let ataques = {...this.props.ataques};
     const [campo, index] = e.target.id.split("-");
@@ -25,13 +72,53 @@ class Ataques extends React.Component {
     });
   }
 
+  addAtaque = () => {    
+    let ataques = {...this.props.ataques};
+    const newAtaque = {
+      value: "",
+      label: "",
+      bonus: "",
+      dano: "",
+      critico: "",
+      tipo: "",
+      alcance: "",
+    }
+    
+    ataques[Object.keys(ataques).length] = newAtaque;
+
+    this.props.updateState({
+      ataques: ataques
+    });
+  }
+
+  removeAtaque = (e) => {
+    let ataques = {...this.props.ataques};
+    let newAtaques = {};
+    let cont = 0;
+    const [, index] = e.target.id.split("-");
+
+    Object.entries(ataques).forEach((ataque) => {
+      let [i, value] = ataque;
+
+      if (i !== index) {
+        newAtaques[cont] = value;
+        cont += 1;
+      }
+    });
+
+    this.props.updateState({
+      ataques: newAtaques
+    });
+  }
+
   renderAtaque = (i, ataque, atributos, pericias) => {
     // console.log(i);
 
     return (
       <tr key={i}>
         <td className="nome">
-          <AtaqueSelect value={ataque} />
+          <AtaqueSelect value={ataque}
+                        onChange={(e) => this.selectAtaque(e, i)} />
         </td>
         <td className="bonus">
           <input id={"bonus-"+i}
@@ -60,7 +147,10 @@ class Ataques extends React.Component {
                  onChange={this.updateAtaque} />
         </td>
         <td className="acao">
-          <button>-</button>
+          <button id={"remove-"+i}
+                  onClick={this.removeAtaque}>
+            -
+          </button>
         </td>
       </tr>
     );
@@ -91,7 +181,7 @@ class Ataques extends React.Component {
               <th className="tipo">Tipo</th>
               <th className="alcance">Alcance</th>
               <th className="acao">
-                <button>+</button>
+                <button onClick={this.addAtaque}>+</button>
               </th>
             </tr>
           </thead>

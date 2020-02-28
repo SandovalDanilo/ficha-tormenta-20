@@ -34,6 +34,22 @@ const style = {
   }),
 }
 
+class AtaqueSelect extends React.Component {
+  render() {
+    console.log(this.props.value);
+    
+    return (
+      <CreatableSelect options={Armas}
+                      //  defaultValue={this.props.value}
+                      //  defaultInputValue={this.props.value}
+                       value={this.props.value}
+                      //  inputValue={this.props.value}
+                       onChange={this.props.onChange}
+                       styles={style} />
+    );
+  }
+}
+
 const Armas = [
   {
     label: "Simples, Corpo a Corpo",
@@ -43,8 +59,8 @@ const Armas = [
         label: "Adaga",
         dano: "1d4",
         critico: "19",
-        alcance: "Curto",
         tipo: "Perfuração",
+        alcance: "Curto",
         pericias: ["luta", "pontaria"]
       },
     ]
@@ -57,8 +73,8 @@ const Armas = [
         label: "Arco curto",
         dano: "1d6",
         critico: "x3",
-        alcance: "Médio",
         tipo: "Perfuração",
+        alcance: "Médio",
         pericias: ["pontaria"]
       },
     ]
@@ -71,8 +87,8 @@ const Armas = [
         label: "Espada longa",
         dano: "1d8",
         critico: "19",
-        alcance: "Melee",
         tipo: "Corte",
+        alcance: "Melee",
         pericias: ["luta"]
       },
     ]
@@ -85,30 +101,13 @@ const Armas = [
         label: "Arco longo",
         dano: "1d6",
         critico: "x3",
-        alcance: "Médio",
         tipo: "Perfuração",
+        alcance: "Médio",
         pericias: ["pontaria"]
       },
     ]
   },
-  
 ]
-
-class AtaqueSelect extends React.Component {
-  render() {
-    console.log(this.props.value);
-    
-    return (
-      <CreatableSelect options={Armas}
-                      //  defaultValue={this.props.value}
-                      //  defaultInputValue={this.props.value}
-                       value={this.props.value}
-                      //  inputValue={this.props.value}
-                       onChange={(e) => {console.log(e)}}
-                       styles={style} />
-    );
-  }
-}
 
 export default AtaqueSelect;
 export { Armas };

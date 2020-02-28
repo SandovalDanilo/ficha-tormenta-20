@@ -44,9 +44,8 @@ class App extends React.Component {
           bonus: "+3",
           dano: "1d4",
           critico: "19",
-          alcance: "Curto",
           tipo: "Perfuração",
-          pericias: ["luta", "pontaria"]
+          alcance: "Curto",
         },
         {
           value: "arco_longo",
@@ -54,9 +53,8 @@ class App extends React.Component {
           bonus: "+3",
           dano: "1d6",
           critico: "x3",
-          alcance: "Médio",
           tipo: "Perfuração",
-          pericias: ["pontaria"]
+          alcance: "Médio",
         },
       ],
     }
@@ -97,6 +95,7 @@ class App extends React.Component {
 
               <Ataques ataques={this.state.ataques}
                        atributos={this.state.atributos}
+                       nivel={this.state.nivel}
                        pericias={this.state.pericias}
                        updateState={this.updateState} />
             </div>

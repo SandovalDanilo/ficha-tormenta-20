@@ -1,30 +1,30 @@
 import React from 'react';
 import './stylesheets/Pericias.css';
 
+const bonusTreino = (pericia, nivel) => {
+  return (pericia.treino ? (Math.ceil(nivel / 7) * 2) : 0);
+}
+
+const metadeNivel = (nivel) => {
+  return Math.floor(nivel / 2);
+}
+
+const modAtributo = (pericia, atributos) => {
+  return atributos[pericia.atributo+"_mod"];
+}  
+
+const calculaTotal = (pericia, nivel, atributos) => {
+  let bonus = 0;
+
+  bonus += metadeNivel(nivel);
+  bonus += modAtributo(pericia, atributos);
+  bonus += bonusTreino(pericia, nivel);
+  bonus += pericia.outros;
+
+  return bonus;
+}
+
 class Pericias extends React.Component {
-  bonusTreino = (pericia, nivel) => {
-    return (pericia.treino ? (Math.ceil(nivel / 7) * 2) : 0);
-  }
-
-  metadeNivel = (nivel) => {
-    return Math.floor(nivel / 2);
-  }
-
-  modAtributo = (pericia, atributos) => {
-    return atributos[pericia.atributo+"_mod"];
-  }
-
-  calculaTotal = (pericia, nivel, atributos) => {
-    let bonus = 0;
-
-    bonus += this.metadeNivel(nivel);
-    bonus += this.modAtributo(pericia, atributos);
-    bonus += this.bonusTreino(pericia, nivel);
-    bonus += pericia.outros;
-
-    return bonus;
-  }
-
   atualizaTreino = (e) => {
     let pericias = {...this.props.pericias};
     pericias[e.target.id].treino = e.target.checked;
@@ -59,25 +59,25 @@ class Pericias extends React.Component {
           </span>
         </td>
         <td className="total">
-          {this.calculaTotal(pericia, nivel, atributos)}
+          {calculaTotal(pericia, nivel, atributos)}
         </td>
         <td>=</td>
         <td className="metade-nivel">
           <input className="numero" 
                  readOnly={true}
-                 value={this.metadeNivel(nivel)} />
+                 value={metadeNivel(nivel)} />
         </td>
         <td className="mod-atributo">
           <span className="simbolo">+</span>
           <input className="numero" 
                  readOnly={true}
-                 value={this.modAtributo(pericia, atributos)} />
+                 value={modAtributo(pericia, atributos)} />
         </td>
         <td className="treino">
           <span className="simbolo">+</span>
           <input className="numero" 
                  readOnly={true}
-                 value={this.bonusTreino(pericia, nivel)} />
+                 value={bonusTreino(pericia, nivel)} />
         </td>
         <td className="outros">
           <span className="simbolo">+</span>
@@ -298,4 +298,4 @@ const ListaPericias = {
 }
 
 export default Pericias;
-export { ListaPericias };
+export { calculaTotal, ListaPericias };
