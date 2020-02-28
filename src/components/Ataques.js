@@ -1,9 +1,10 @@
 import React from 'react';
+import Select from './Select';
 import { modComSinal } from './Utils';
 import { calculaTotal } from './Pericias';
+import { Armas } from './Armas'
 import './stylesheets/Ataques.css';
 
-import AtaqueSelect from './AtaqueSelect';
 
 class Ataques extends React.Component {
   selectAtaque = (selected, i) => {
@@ -111,14 +112,13 @@ class Ataques extends React.Component {
     });
   }
 
-  renderAtaque = (i, ataque, atributos, pericias) => {
-    // console.log(i);
-
+  renderAtaque = (i, ataque) => {
     return (
       <tr key={i}>
         <td className="nome">
-          <AtaqueSelect value={ataque}
-                        onChange={(e) => this.selectAtaque(e, i)} />
+          <Select value={ataque}
+                  options={Armas}
+                  onChange={(e) => this.selectAtaque(e, i)} />
         </td>
         <td className="bonus">
           <input id={"bonus-"+i}
@@ -163,8 +163,6 @@ class Ataques extends React.Component {
         this.renderAtaque(
           ataque[0],
           ataque[1],
-          this.props.atributos,
-          this.props.pericias,
         )
       )
     });

@@ -1,0 +1,67 @@
+.DefesaArmadura {
+  margin: 5px;
+}
+
+.DefesaArmadura th {
+  font-size: 10px;
+  font-weight: normal;
+  vertical-align: bottom;
+}
+
+.DefesaArmadura td {
+  text-align: center;
+}
+
+.DefesaArmadura td input {
+  border: 0;
+  border-bottom: 1px solid #000;
+  background: none;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  width: 80%;
+}
+
+/* === */
+
+.Defesa {
+  border: 1px solid #000;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.Defesa .simbolo {
+  width: 3%;
+}
+
+.Defesa td.base {
+  font-size: 18px;
+}
+
+.Defesa td input.defesa {
+  font-size: 20px;
+  margin-top: -5px;
+}
+
+/* === */
+
+.Armadura {
+  border: 1px solid #000;
+  padding: 5px;
+  width: 100%;
+}
+
+.Armadura .armadura-escudo {
+  text-align: left;
+}
+
+.Armadura .defesa,
+.Armadura .penalidade {
+  width: 25%;
+}
+
+.Armadura .armadura-escudo input {
+  width: 90%;
+  text-align: left;
+}

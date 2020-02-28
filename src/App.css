@@ -24,6 +24,14 @@
   flex: 1;
 }
 
+.Ficha .core .defesa-armadura {
+  flex: 3;
+}
+
+.Ficha .core .proficiencias {
+  flex: 2;
+}
+
 .Ficha .bold-label {
   font-weight: bold !important;
   font-size: 11px !important;

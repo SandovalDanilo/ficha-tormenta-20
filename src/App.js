@@ -6,6 +6,7 @@ import Atributos from './components/Atributos';
 import VidaMana from './components/VidaMana';
 import Pericias, { ListaPericias } from './components/Pericias';
 import Ataques from './components/Ataques';
+import DefesaArmadura from './components/DefesaArmadura';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,6 +58,21 @@ class App extends React.Component {
           alcance: "Médio",
         },
       ],
+      defesa: {
+        armadura: {
+          value: "couro-batido",
+          label: "Couro batido",
+          defesa: 3,
+          penalidade: -1,
+        },
+        escudo: {
+          value: "escudo-leve",
+          label: "Escudo leve",
+          defesa: 1,
+          penalidade: -1,
+        },
+        outros: 1,
+      }
     }
   }
 
@@ -98,6 +114,17 @@ class App extends React.Component {
                        nivel={this.state.nivel}
                        pericias={this.state.pericias}
                        updateState={this.updateState} />
+
+              <div className="core">
+                <div className="defesa-armadura">
+                  <DefesaArmadura defesa={this.state.defesa}
+                                  des_mod={this.state.atributos.des_mod}
+                                  updateState={this.updateState} />
+                </div>
+                <div className="proficiencias">
+                  
+                </div>
+              </div>
             </div>
             <div className="dir">
               <Pericias pericias={this.state.pericias}
