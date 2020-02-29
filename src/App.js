@@ -8,6 +8,8 @@ import Pericias, { ListaPericias } from './components/Pericias';
 import Ataques from './components/Ataques';
 import DefesaArmadura from './components/DefesaArmadura';
 import Proficiencias from './components/Proficiencias';
+import Habilidades from './components/Habilidades';
+import Equipamento from './components/Equipamento';
 
 class App extends React.Component {
   constructor(props) {
@@ -75,6 +77,9 @@ class App extends React.Component {
         outros: 1,
       },
       proficiencias: "Armas marciais\nEscudos",
+      habilidades: "Ataque Especial\nNvl 3 - Guerreiro",
+      tibar: 0,
+      tibar_ouro: 0,
     }
   }
 
@@ -129,12 +134,20 @@ class App extends React.Component {
                                  handleChange={this.handleChange}/>
                 </div>
               </div>
+
+              <Habilidades habilidades={this.state.habilidades}
+                           handleChange={this.handleChange}/>
             </div>
             <div className="dir">
               <Pericias pericias={this.state.pericias}
                         nivel={this.state.nivel}
                         atributos={this.state.atributos}
                         updateState={this.updateState} />
+
+              <Equipamento equipamento={this.state.equipamento}
+                           tibar={this.state.tibar}
+                           tibar_ouro={this.state.tibar_ouro}
+                           handleChange={this.handleChange}/>
             </div>
           </div>
         </div>

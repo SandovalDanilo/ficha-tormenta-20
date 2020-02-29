@@ -1,0 +1,43 @@
+.Equipamento {
+  margin: 5px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  padding: 5px;
+}
+
+.Equipamento .title {
+  text-align: center;
+}
+
+.Equipamento textarea {
+  margin: 5px 0;
+  font-size: 13px;
+  min-height: 230px;
+  height: 100%;
+}
+
+.Equipamento .dinheiro {
+  text-align: center;
+}
+
+.Equipamento input {
+  border: 0;
+  border-bottom: 1px solid #000;
+  background: none;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  width: 80px;
+  margin: 0 5px;
+}
+
+.Equipamento label {
+  margin-left: 10px;
+}
+
+.Equipamento label:first-child {
+  margin-left: 0;
+}

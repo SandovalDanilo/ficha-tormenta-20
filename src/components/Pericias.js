@@ -146,7 +146,7 @@ const ListaPericias = {
     outros: 0,
   },
   atuacao: {
-    nome: "Atuacao",
+    nome: "Atuação",
     atributo: "car",
     treino: false,
     outros: 0,
@@ -176,7 +176,7 @@ const ListaPericias = {
     outros: 0,
   },
   enganacao: {
-    nome: "Enganacao",
+    nome: "Enganação",
     atributo: "car",
     treino: false,
     outros: 0,
@@ -206,19 +206,19 @@ const ListaPericias = {
     outros: 0,
   },
   intimidacao: {
-    nome: "Intimidacao",
+    nome: "Intimidação",
     atributo: "car",
     treino: false,
     outros: 0,
   },
   intuicao: {
-    nome: "Intuicao",
+    nome: "Intuição",
     atributo: "sab",
     treino: false,
     outros: 0,
   },
   investigacao: {
-    nome: "Investigacao",
+    nome: "Investigação",
     atributo: "int",
     treino: false,
     outros: 0,
@@ -248,7 +248,7 @@ const ListaPericias = {
     outros: 0,
   },
   navegacao: {
-    nome: "Navegacao",
+    nome: "Navegação",
     atributo: "sab",
     treino: false,
     outros: 0,
@@ -260,7 +260,7 @@ const ListaPericias = {
     outros: 0,
   },
   percepcao: {
-    nome: "Percepcao",
+    nome: "Percepção",
     atributo: "sab",
     treino: false,
     outros: 0,
@@ -278,13 +278,13 @@ const ListaPericias = {
     outros: 0,
   },
   religiao: {
-    nome: "Religiao",
+    nome: "Religião",
     atributo: "sab",
     treino: false,
     outros: 0,
   },
   sobrevivencia: {
-    nome: "Sobrevivencia",
+    nome: "Sobrevivência",
     atributo: "sab",
     treino: false,
     outros: 0,

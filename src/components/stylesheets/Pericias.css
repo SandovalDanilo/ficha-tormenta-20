@@ -48,7 +48,10 @@
 }
 
 .Pericias .linha td.nome {
-  font-size: 13px;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  letter-spacing: 0.5px;
 }
 
 .Pericias .linha td.nome .atributo {
