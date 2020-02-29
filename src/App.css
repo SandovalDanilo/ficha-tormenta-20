@@ -8,6 +8,7 @@
 
 .Ficha,
 .Ficha input,
+.Ficha textarea,
 .Ficha select {
   font-family: 'Source Sans Pro';
 }
@@ -30,6 +31,7 @@
 
 .Ficha .core .proficiencias {
   flex: 2;
+  display: flex;
 }
 
 .Ficha .bold-label {

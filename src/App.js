@@ -7,6 +7,7 @@ import VidaMana from './components/VidaMana';
 import Pericias, { ListaPericias } from './components/Pericias';
 import Ataques from './components/Ataques';
 import DefesaArmadura from './components/DefesaArmadura';
+import Proficiencias from './components/Proficiencias';
 
 class App extends React.Component {
   constructor(props) {
@@ -72,17 +73,19 @@ class App extends React.Component {
           penalidade: -1,
         },
         outros: 1,
-      }
+      },
+      proficiencias: "Armas marciais\nEscudos",
     }
   }
 
   handleChange = (e) => {
     let newState = {[e.target.id]: e.target.value} 
-    this.setState(newState)
+
+    this.setState(newState);
   }
 
   updateState = (newState) => {
-    this.setState(newState)
+    this.setState(newState);
   }
 
   saveLocal = () => {
@@ -122,7 +125,8 @@ class App extends React.Component {
                                   updateState={this.updateState} />
                 </div>
                 <div className="proficiencias">
-                  
+                  <Proficiencias proficiencias={this.state.proficiencias}
+                                 handleChange={this.handleChange}/>
                 </div>
               </div>
             </div>
