@@ -10,21 +10,32 @@
   padding-bottom: 10px;
 }
 
-.VidaMana > div > label {
-  text-transform: uppercase;
-  font-size: 11px;
-}
-
 .VidaMana .pontos {
   display: flex;
 }
 
+.VidaMana .pontos input {
+  display: block;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
 .VidaMana .pontos .maximos {
-  flex: 1;
+  flex: 3;
   border-right: 1px solid #999;
 }
 
 .VidaMana .pontos .atuais {
+  flex: 4;
+}
+
+.VidaMana .pontos .cura-dano {
   flex: 3;
 }
 

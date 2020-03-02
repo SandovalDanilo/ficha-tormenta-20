@@ -170,7 +170,8 @@ class App extends React.Component {
               <Atributos atributos={this.state.atributos}
                          onVidaManaChange={this.onVidaManaChange}
                          updateState={this.updateState} />
-              <VidaMana pontos={this.state.pontos} />
+              <VidaMana pontos={this.state.pontos}
+                        updateState={this.updateState} />
 
               <Ataques ataques={this.state.ataques}
                        atributos={this.state.atributos}
