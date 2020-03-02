@@ -1,6 +1,5 @@
 .Habilidades {
   margin: 5px;
-  padding: 5px;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
@@ -9,12 +8,23 @@
 }
 
 .Habilidades .title {
+  padding: 5px;
   text-align: center;
 }
 
+.Habilidades .areas {
+  display: flex;
+}
+
 .Habilidades textarea {
-  margin-top: 5px;
+  flex: 1;
+  margin: 5px;
+  margin-right: 0;
   font-size: 13px;
   min-height: 230px;
   height: 100%;
+}
+
+.Habilidades textarea:last-child {
+  margin-right: 5px;
 }

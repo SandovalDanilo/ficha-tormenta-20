@@ -8,9 +8,14 @@ class Habilidades extends React.Component {
         <div className="bold-label title">
           Habilidades & Magias
         </div>
-        <textarea id="habilidades"
-                  defaultValue={this.props.habilidades}
-                  onBlur={this.props.handleChange} />
+        <div className="areas">
+          <textarea id="habilidades"
+                    value={this.props.habilidades}
+                    onChange={this.props.handleChange} />
+          <textarea id="magias"
+                    value={this.props.magias}
+                    onChange={this.props.handleChange} />
+        </div>
       </div>
     )
   }

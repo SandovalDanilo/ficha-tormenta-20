@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from './Select';
+import CustomSelect from './CustomSelect';
 import { Armaduras, Escudos } from './Armaduras';
 import './stylesheets/DefesaArmadura.css';
 
@@ -137,7 +137,7 @@ class DefesaArmadura extends React.Component {
         <tbody>
           <tr>
             <td className="armadura-escudo">
-              <Select value={defesa.armadura}
+              <CustomSelect value={defesa.armadura}
                       options={Armaduras}
                       onChange={this.selectArmadura} />
             </td>
@@ -154,7 +154,7 @@ class DefesaArmadura extends React.Component {
           </tr>
           <tr>
             <td className="armadura-escudo">
-              <Select value={defesa.escudo}
+              <CustomSelect value={defesa.escudo}
                       options={Escudos}
                       onChange={this.selectEscudo} />
             </td>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from './Select';
+import CustomSelect from './CustomSelect';
 import { modComSinal } from './Utils';
 import { calculaTotal } from './Pericias';
 import { Armas } from './Armas'
@@ -116,9 +116,9 @@ class Ataques extends React.Component {
     return (
       <tr key={i}>
         <td className="nome">
-          <Select value={ataque}
-                  options={Armas}
-                  onChange={(e) => this.selectAtaque(e, i)} />
+          <CustomSelect value={ataque}
+                        options={Armas}
+                        onChange={(e) => this.selectAtaque(e, i)} />
         </td>
         <td className="bonus">
           <input id={"bonus-"+i}

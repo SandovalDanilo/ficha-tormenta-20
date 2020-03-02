@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.Header div {
+.Header > div {
   flex: 1;
 }
 
@@ -10,9 +10,10 @@
   margin: 5px;
 }
 
-.Header .input-wrapper input {
+.Header .input-wrapper > input {
   display: block;
   width: 100%;
+  height: 30px;
   border: none;
   border-bottom: 2px solid #000;
   font-size: 18px;
@@ -35,4 +36,8 @@
 
 .Header .classe-nivel > .classe {
   flex: 3;
+}
+
+.Header .classe-nivel > .nivel {
+  flex: 1;
 }

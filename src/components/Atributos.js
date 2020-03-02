@@ -17,12 +17,18 @@ class Atributos extends React.Component {
   }
 
   atualizaModificadores = (e) => {
-    let atributos = {...this.props.atributos};
-    atributos[e.target.id+"_mod"] = this.calculaMod(e.target.value);
-
-    this.props.updateState({
-      atributos: atributos
-    });
+    const newMod = this.calculaMod(e.target.value);
+    
+    if(e.target.id === 'con') {
+      this.props.onVidaManaChange('con_mod', newMod)
+    } else {
+      this.props.updateState({
+        atributos: {
+          ...this.props.atributos,
+          [e.target.id+"_mod"]: newMod
+        }
+      });
+    }    
   }
 
   caixaAtributo = (atr) => {

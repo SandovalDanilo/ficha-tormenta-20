@@ -1,7 +1,25 @@
 import React from 'react';
+import CustomSelect from './CustomSelect';
+import { Classes } from './Classes';
 import './stylesheets/Header.css';
 
+const customSelectStyle = {
+  targetHeight: 30,
+  control: {
+    borderBottom: '2px solid #000',
+    fontSize: 18,
+  },
+}
+
 class Header extends React.Component {
+  onClasseChange = (classe) => {
+    this.props.onVidaManaChange("classe", classe);
+  }
+
+  onNivelChange = (nivel) => {
+    this.props.onVidaManaChange("nivel", parseInt(nivel));
+  }
+
   render() {
     return (
       <div className="Header">
@@ -35,14 +53,19 @@ class Header extends React.Component {
           
           <div className="classe-nivel">
             <div className="input-wrapper classe">
-              <input id="classe" value={this.props.state.classe}
-                                 onChange={(e) => this.props.handleChange(e)} />
+              <CustomSelect options={Classes}
+                            creatable={false}
+                            value={this.props.classe}
+                            style={customSelectStyle} 
+                            onChange={(e) => this.onClasseChange(e)} />
               <label htmlFor="classe">Classe</label>
             </div>
 
-            <div className="input-wrapper">
-              <input id="nivel" value={this.props.state.nivel}
-                                onChange={(e) => this.props.handleChange(e)} />
+            <div className="input-wrapper nivel">
+              <input id="nivel" 
+                     type="number"
+                     value={this.props.nivel}
+                     onChange={(e) => this.onNivelChange(e.target.value)} />
               <label htmlFor="nivel">Nível</label>
             </div>
           </div>
