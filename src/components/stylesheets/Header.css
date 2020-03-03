@@ -30,6 +30,10 @@
   display: flex;
 }
 
+.Header .raca-origem > div {
+  flex: 1;
+}
+
 .Header .classe-nivel {
   display: flex;
 }

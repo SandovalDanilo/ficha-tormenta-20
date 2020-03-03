@@ -35,6 +35,10 @@
   flex: 4;
 }
 
+.VidaMana .mana .pontos .atuais {
+  flex: 7;
+}
+
 .VidaMana .pontos .cura-dano {
   flex: 3;
 }

@@ -62,7 +62,7 @@ class VidaMana extends React.Component {
         <div className="mana">
           <label className="bold-label">Pontos de Mana</label>
           <div className="pontos">
-          <div className="maximos">
+            <div className="maximos">
               <input id="mana_max"
                      type="number"
                      min={0}
