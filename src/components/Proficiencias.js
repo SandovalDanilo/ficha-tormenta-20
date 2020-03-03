@@ -9,8 +9,8 @@ class Proficiencias extends React.Component {
           Proficiências & Outras características
         </div>
         <textarea id="proficiencias"
-                  defaultValue={this.props.proficiencias}
-                  onBlur={this.props.handleChange} />
+                  value={this.props.proficiencias}
+                  onChange={this.props.handleChange} />
       </div>
     )
   }

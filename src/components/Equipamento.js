@@ -9,8 +9,8 @@ class Equipamento extends React.Component {
           Equipamento
         </div>
         <textarea id="equipamento"
-                  defaultValue={this.props.equipamento}
-                  onBlur={this.props.handleChange} />
+                  value={this.props.equipamento}
+                  onChange={this.props.handleChange} />
         <div className="dinheiro">
           <label>T$:</label>
           <input id="tibar"

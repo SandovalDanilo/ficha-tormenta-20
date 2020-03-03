@@ -59,7 +59,7 @@ const Armas = [
         critico: "x2",
         tipo: "Perfuração",
         alcance: "Curto",
-        pericias: ["luta"]
+        pericias: ["luta", "pontaria"]
       },
       {
         value: "Maça",
@@ -200,7 +200,7 @@ const Armas = [
         critico: "x3",
         tipo: "Corte",
         alcance: "Curto",
-        pericias: ["luta"]
+        pericias: ["luta", "pontaria"]
       },
     ]
   },
@@ -208,9 +208,140 @@ const Armas = [
     label: "Marciais, Corpo a Corpo, Uma Mão",
     options: [
       {
+        value: "Cimitarra",
+        label: "Cimitarra",
+        dano: "1d6",
+        critico: "18",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Escudo pesado",
+        label: "Escudo pesado",
+        dano: "1d6",
+        critico: "x2",
+        tipo: "Esmagamento",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
         value: "Espada longa",
         label: "Espada longa",
         dano: "1d8",
+        critico: "19",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Florete",
+        label: "Florete",
+        dano: "1d6",
+        critico: "18",
+        tipo: "Perfuração",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Machado de batalha",
+        label: "Machado de batalha",
+        dano: "1d8",
+        critico: "x3",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Mangual",
+        label: "Mangual",
+        dano: "1d8",
+        critico: "x2",
+        tipo: "Esmagamento",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Martelo de guerra",
+        label: "Martelo de guerra",
+        dano: "1d8",
+        critico: "x3",
+        tipo: "Esmagamento",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Picareta",
+        label: "Picareta",
+        dano: "1d6",
+        critico: "x4",
+        tipo: "Perfuração",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Tridente",
+        label: "Tridente",
+        dano: "1d8",
+        critico: "x2",
+        tipo: "Perfuração",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+    ]
+  },
+  {
+    label: "Marciais, Corpo a Corpo, Duas Mãos",
+    options: [
+      {
+        value: "Alabarda",
+        label: "Alabarda",
+        dano: "1d10",
+        critico: "x3",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Alfange",
+        label: "Alfange",
+        dano: "2d4",
+        critico: "18",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Gadanho",
+        label: "Gadanho",
+        dano: "2d4",
+        critico: "x4",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Lança montada",
+        label: "Lança montada",
+        dano: "1d8",
+        critico: "x3",
+        tipo: "Perfuração",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Machado de guerra",
+        label: "Machado de guerra",
+        dano: "1d12",
+        critico: "x3",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Montante",
+        label: "Montante",
+        dano: "2d6",
         critico: "19",
         tipo: "Corte",
         alcance: "--",
@@ -222,10 +353,19 @@ const Armas = [
     label: "Marciais, Distância",
     options: [
       {
-        value: "arco_longo",
+        value: "Arco longo",
         label: "Arco longo",
         dano: "1d6",
         critico: "x3",
+        tipo: "Perfuração",
+        alcance: "Médio",
+        pericias: ["pontaria"]
+      },
+      {
+        value: "Besta pesada",
+        label: "Besta pesada",
+        dano: "1d12",
+        critico: "19",
         tipo: "Perfuração",
         alcance: "Médio",
         pericias: ["pontaria"]

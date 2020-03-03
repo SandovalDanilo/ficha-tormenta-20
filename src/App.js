@@ -4,89 +4,19 @@ import './App.css';
 import Header from './components/Header';
 import Atributos from './components/Atributos';
 import VidaMana from './components/VidaMana';
-import Pericias, { ListaPericias } from './components/Pericias';
+import Pericias from './components/Pericias';
 import Ataques from './components/Ataques';
 import DefesaArmadura from './components/DefesaArmadura';
 import Proficiencias from './components/Proficiencias';
 import Habilidades from './components/Habilidades';
 import Equipamento from './components/Equipamento';
-import { Classes } from './components/Classes';
+import { EmptyState, DefaultState } from './components/DefaultState';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      nome: "Drontaz",
-      raca: "Anão",
-      origem: "Acólito",
-      jogador: "Você",
-      classe: Classes[6],
-      nivel: 3,
-      atributos: {
-        for: 16,
-        for_mod: 3,
-        des: 10,
-        des_mod: 0,
-        con: 18,
-        con_mod: 4,
-        int: 12,
-        int_mod: 1,
-        sab: 16,
-        sab_mod: 3,
-        car: 10,
-        car_mod: 0,
-      },
-      pontos: {
-        vida_max: 36,
-        vida_atual: 36,
-        vida_calculada: true,
-        mana_max: 15,
-        mana_atual: 15,
-        mana_calculada: true,
-      },
-      pericias: ListaPericias,
-      ataques: [
-        {
-          value: "adaga",
-          label: "Adaga",
-          bonus: "+3",
-          dano: "1d4",
-          critico: "19",
-          tipo: "Perfuração",
-          alcance: "Curto",
-        },
-        {
-          value: "arco_longo",
-          label: "Arco longo",
-          bonus: "+3",
-          dano: "1d6",
-          critico: "x3",
-          tipo: "Perfuração",
-          alcance: "Médio",
-        },
-      ],
-      defesa: {
-        armadura: {
-          value: "couro-batido",
-          label: "Couro batido",
-          defesa: 3,
-          penalidade: -1,
-        },
-        escudo: {
-          value: "escudo-leve",
-          label: "Escudo leve",
-          defesa: 1,
-          penalidade: -1,
-        },
-        outros: 1,
-      },
-      proficiencias: "Armaduras pesadas e escudos",
-      habilidades: "Ataque Especial\nNvl 3 - Guerreiro",
-      magias: "Raio de Fogo\nNvl 1 - Arcanista",
-      tibar: 0,
-      tibar_ouro: 0,
-    }
+    this.state = DefaultState;
   }
 
   onVidaManaChange = (campo, valor) => {
@@ -139,6 +69,10 @@ class App extends React.Component {
 
   updateState = (newState) => {
     this.setState(newState);
+  }
+
+  newFicha = () => {
+    this.setState(EmptyState);
   }
 
   saveLocal = () => {
@@ -210,6 +144,9 @@ class App extends React.Component {
         </div>
 
         <div className="actions">
+          <button onClick={this.newFicha}>
+            Nova
+          </button>
           <button onClick={this.saveLocal}>
             Salvar
           </button>
