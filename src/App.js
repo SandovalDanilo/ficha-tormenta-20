@@ -154,6 +154,11 @@ class App extends React.Component {
             Carregar
           </button>
         </div>
+
+        <div className="share-state">
+          <textarea id="share-state"
+                    value={JSON.stringify(this.state)} />
+        </div>
       </div>
     )
   }

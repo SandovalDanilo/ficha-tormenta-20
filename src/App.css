@@ -54,3 +54,13 @@
   font-family: 'Source Sans Pro';
   font-weight: 600;
 }
+
+.share-state {
+  margin: 20px auto;
+  width: 600px;
+}
+
+.share-state textarea {
+  width: 100%;
+  height: 50px;
+}
