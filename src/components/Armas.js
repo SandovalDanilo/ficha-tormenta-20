@@ -155,7 +155,7 @@ const Armas = [
       {
         value: "Fogo alquímico",
         label: "Fogo alquímico",
-        dano: "1d4",
+        dano: "1d6",
         critico: "--",
         tipo: "Fogo",
         alcance: "Curto",
@@ -368,6 +368,84 @@ const Armas = [
         critico: "19",
         tipo: "Perfuração",
         alcance: "Médio",
+        pericias: ["pontaria"]
+      },
+    ]
+  },
+  {
+    label: "Exóticas, Corpo a Corpo, Uma Mão",
+    options: [
+      {
+        value: "Chicote",
+        label: "Chicote",
+        dano: "1d3",
+        critico: "x2",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Espada bastarda",
+        label: "Espada bastarda",
+        dano: "1d10",
+        critico: "19",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+      {
+        value: "Machado anão",
+        label: "Machado anão",
+        dano: "1d10",
+        critico: "x3",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+    ]
+  },
+  {
+    label: "Exóticas, Corpo a Corpo, Duas Mãos",
+    options: [
+      {
+        value: "Machado táurico",
+        label: "Machado táurico",
+        dano: "2d8",
+        critico: "x3",
+        tipo: "Corte",
+        alcance: "--",
+        pericias: ["luta"]
+      },
+    ]
+  },
+  {
+    label: "Exóticas, Distância",
+    options: [
+      {
+        value: "Pistola",
+        label: "Pistola",
+        dano: "2d6",
+        critico: "19/x3",
+        tipo: "Perfuração",
+        alcance: "Curto",
+        pericias: ["pontaria"]
+      },
+      {
+        value: "Mosquete",
+        label: "Mosquete",
+        dano: "2d8",
+        critico: "19/x3",
+        tipo: "Perfuração",
+        alcance: "Médio",
+        pericias: ["pontaria"]
+      },
+      {
+        value: "Rede",
+        label: "Rede",
+        dano: "",
+        critico: "",
+        tipo: "--",
+        alcance: "Curto",
         pericias: ["pontaria"]
       },
     ]

@@ -147,13 +147,13 @@ const DefaultState = {
     },
     fortitude: {
       nome: 'Fortitude',
-      atributo: 'des',
+      atributo: 'con',
       treino: false,
       outros: 0
     },
     furtividade: {
       nome: 'Furtividade',
-      atributo: 'con',
+      atributo: 'des',
       treino: false,
       outros: 0
     },

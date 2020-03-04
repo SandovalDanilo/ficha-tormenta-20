@@ -54,7 +54,7 @@
   letter-spacing: 0.5px;
 }
 
-.Pericias .linha td.nome .atributo {
+.Pericias .linha td.atributo {
   font-size: 10px;
   text-transform: uppercase;
   color: #666;

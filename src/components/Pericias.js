@@ -54,9 +54,9 @@ class Pericias extends React.Component {
         </td>
         <td className="nome">
           {pericia.nome}
-          <span className="atributo">
-            &nbsp;({pericia.atributo})
-          </span>
+        </td>
+        <td className="atributo">
+          ({pericia.atributo})
         </td>
         <td className="total">
           {calculaTotal(pericia, nivel, atributos)}
@@ -108,7 +108,7 @@ class Pericias extends React.Component {
         <table>
           <thead>
             <tr className="linha header">
-              <th className="nome bold-label" colSpan="2">Perícias</th>
+              <th className="nome bold-label" colSpan="3">Perícias</th>
               <th className="total bold-label">Total</th>
               <th className="igual"></th>
               <th className="metade-nivel">1/2 Nível</th>
@@ -183,13 +183,13 @@ const ListaPericias = {
   },
   fortitude: {
     nome: "Fortitude",
-    atributo: "des",
+    atributo: "con",
     treino: false,
     outros: 0,
   },
   furtividade: {
     nome: "Furtividade",
-    atributo: "con",
+    atributo: "des",
     treino: false,
     outros: 0,
   },

@@ -16,6 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.shareStateRef = React.createRef();
     this.state = DefaultState;
   }
 
@@ -76,14 +77,21 @@ class App extends React.Component {
   }
 
   saveLocal = () => {
-    localStorage.setItem('ficha', JSON.stringify(this.state))
+    const fichaTexto = JSON.stringify(this.state);
+
+    localStorage.setItem('ficha', fichaTexto);
+
+    const node = this.shareStateRef.current;
+    node.value = fichaTexto;
 
     console.log(JSON.parse(localStorage.ficha))
   }
 
   loadLocal = () => {
-    let ficha = localStorage.ficha;
-    if(ficha !== undefined) {
+    const node = this.shareStateRef.current;
+    const ficha = node.value || localStorage.ficha;
+    
+    if(ficha !== undefined && ficha !== "") {
       console.log(JSON.parse(ficha))
 
       this.setState(JSON.parse(ficha))
@@ -157,7 +165,7 @@ class App extends React.Component {
 
         <div className="share-state">
           <textarea id="share-state"
-                    value={JSON.stringify(this.state)} />
+                    ref={this.shareStateRef} />
         </div>
       </div>
     )
