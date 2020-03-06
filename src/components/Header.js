@@ -23,35 +23,40 @@ class Header extends React.Component {
   render() {
     return (
       <div className="Header">
-        <div>
-          <div className="input-wrapper">
-            <input id="nome" value={this.props.state.nome}
-                             onChange={(e) => this.props.handleChange(e)} />
-            <label htmlFor="nome">Nome do Personagem</label>
+        <div className="basic-info">
+          <div className="row">
+            <div className="input-wrapper nome">
+              <input id="nome" value={this.props.state.nome}
+                                onChange={(e) => this.props.handleChange(e)} />
+              <label htmlFor="nome">Nome do Personagem</label>
+            </div>
+
+            <div className="input-wrapper jogador">
+              <input id="jogador" value={this.props.state.jogador}
+                                onChange={(e) => this.props.handleChange(e)} />
+              <label htmlFor="jogador">Jogador</label>
+            </div>
+
+            <div className="input-wrapper divindade">
+              <input id="divindade" value={this.props.state.divindade}
+                                onChange={(e) => this.props.handleChange(e)} />
+              <label htmlFor="divindade">Divindade</label>
+            </div>
           </div>
 
-          <div className="raca-origem">
-            <div className="input-wrapper">
+          <div className="row">
+            <div className="input-wrapper raca">
               <input id="raca" value={this.props.state.raca}
                                onChange={(e) => this.props.handleChange(e)} />
               <label htmlFor="raca">Raça</label>
             </div>
-            <div className="input-wrapper">
+
+            <div className="input-wrapper origem">
               <input id="origem" value={this.props.state.origem}
                                  onChange={(e) => this.props.handleChange(e)} />
               <label htmlFor="origem">Origem</label>
             </div>
-          </div>
-        </div>
 
-        <div>
-          <div className="input-wrapper">
-            <input id="jogador" value={this.props.state.jogador}
-                                onChange={(e) => this.props.handleChange(e)} />
-            <label htmlFor="jogador">Jogador</label>
-          </div>
-          
-          <div className="classe-nivel">
             <div className="input-wrapper classe">
               <CustomSelect options={Classes}
                             creatable={false}
@@ -69,10 +74,10 @@ class Header extends React.Component {
               <label htmlFor="nivel">Nível</label>
             </div>
           </div>
-        </div>
 
+        </div>
         <div className="logo">
-          <strong>Tormenta 20</strong>
+          <img src="./logo.jpeg" />
         </div>
       </div>
     )

@@ -2,12 +2,37 @@
   display: flex;
 }
 
-.Header > div {
-  flex: 1;
+.Header .basic-info {
+  flex: 2;
+}
+
+.Header .row {
+  display: flex;
 }
 
 .Header .input-wrapper {
+  flex: 1;
   margin: 5px;
+}
+
+.Header .input-wrapper.nome {
+  flex: 2;
+}
+
+.Header .input-wrapper.raca {
+  flex: 3;
+}
+
+.Header .input-wrapper.origem {
+  flex: 3;
+}
+
+.Header .input-wrapper.classe {
+  flex: 4;
+}
+
+.Header .input-wrapper.nivel {
+  flex: 2;
 }
 
 .Header .input-wrapper > input {
@@ -20,28 +45,19 @@
   box-sizing: border-box;
 }
 
-.Header .input-wrapper label {
+.Header .input-wrapper > label {
   display: block;
   font-size: 14px;
   text-transform: uppercase;
 }
 
-.Header .raca-origem {
-  display: flex;
-}
-
-.Header .raca-origem > div {
+.Header .logo {
   flex: 1;
-}
-
-.Header .classe-nivel {
   display: flex;
+  justify-content: center;
 }
 
-.Header .classe-nivel > .classe {
-  flex: 3;
-}
-
-.Header .classe-nivel > .nivel {
-  flex: 1;
+.Header .logo img {
+  max-width: 80%;
+  align-self: center;
 }
