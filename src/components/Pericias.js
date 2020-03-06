@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListaAtributos } from './Atributos';
 import './stylesheets/Pericias.css';
 
 const bonusTreino = (pericia, nivel) => {
@@ -43,6 +44,25 @@ class Pericias extends React.Component {
     });
   }
 
+  atributosOptions = () => {
+    return ListaAtributos.map((atr) => {
+      return (
+        <option value={atr} key={atr}>
+          {atr.toUpperCase()}
+        </option>
+      )
+    })
+  }
+
+  changePericiaAtributo = (e) => {
+    let pericias = {...this.props.pericias};
+    pericias[e.target.id].atributo = e.target.value;
+
+    this.props.updateState({
+      pericias: pericias
+    });    
+  }
+
   renderPericia = (key, pericia, nivel, atributos) => {
     return (
       <tr className="linha" key={key}>
@@ -56,7 +76,12 @@ class Pericias extends React.Component {
           {pericia.nome}
         </td>
         <td className="atributo">
-          ({pericia.atributo})
+          <select className="atributo"
+                  id={key}
+                  onChange={this.changePericiaAtributo}
+                  value={pericia.atributo}>
+            {this.atributosOptions(pericia.atributo)}
+          </select>
         </td>
         <td className="total">
           {calculaTotal(pericia, nivel, atributos)}

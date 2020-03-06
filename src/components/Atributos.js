@@ -47,14 +47,15 @@ class Atributos extends React.Component {
   }
 
   render() {
-    const atributos = ["for", "des", "con", "int", "sab", "car"];
-
     return (
       <div className="Atributos">
-        {atributos.map(this.caixaAtributo)}
+        {ListaAtributos.map(this.caixaAtributo)}
       </div>
     )
   }
 }
 
+const ListaAtributos = ["for", "des", "con", "int", "sab", "car"];
+
 export default Atributos;
+export { ListaAtributos };
