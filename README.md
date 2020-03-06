@@ -15,6 +15,7 @@ This is a experimental React app that facilitates a Tormenta20 character creatio
 - Individual class feature and magic items;
 - Layout improvements;
 - Multiple sheets saving/loading;
+- Adding/removing Perícias (e.g. Ofício);
 
 If you have any suggestion, feel free to open an issue or a PR!
 
